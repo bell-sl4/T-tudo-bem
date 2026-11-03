@@ -1,0 +1,26 @@
+:root{--bg:#14172b;--panel:#1f2442;--ink:#f2efe6;--mute:#a9adc9;--acc:#ffcf4a;--ok:#5bd68a;--bad:#ff6b7a;--line:#3b4275}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Courier New",ui-monospace,monospace;line-height:1.5}
+#app{max-width:860px;margin:0 auto;padding:16px}
+.screen{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+h1{font-size:clamp(2.2rem,8vw,4rem);margin:.6em 0 0;letter-spacing:.04em;color:var(--acc);text-shadow:4px 4px 0 #000}
+h2{margin:.4em 0;color:var(--acc)}
+.lead{max-width:56ch;font-size:1.1rem}
+.rules{text-align:left;max-width:60ch;line-height:1.8}
+.credit{color:var(--mute);font-size:.85rem;margin:0}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+button{font:inherit;font-weight:700;background:var(--acc);color:#14172b;border:3px solid #000;box-shadow:4px 4px 0 #000;padding:12px 20px;cursor:pointer;min-height:44px}
+button.alt{background:var(--panel);color:var(--ink);border-color:var(--line)}
+button:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #000}
+button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.small button{padding:8px 14px;font-size:.85rem}
+#hud{display:flex;justify-content:space-between;gap:8px;width:100%;font-weight:700;flex-wrap:wrap}
+#stmt{width:100%;min-height:4.2em;background:var(--panel);border:3px solid var(--line);padding:10px 14px;font-size:clamp(1rem,2.8vw,1.25rem);display:flex;align-items:center;justify-content:center}
+#stage{position:relative;width:100%}
+#cv{width:100%;height:auto;display:block;background:#000;image-rendering:pixelated;border:3px solid #000;touch-action:manipulation}
+#fb,#end{position:absolute;left:0;right:0;padding:12px 16px;background:rgba(20,23,43,.94);border:3px solid var(--line);text-align:left}
+#fb{bottom:0}
+#fb.ok{border-color:var(--ok)}#fb.bad{border-color:var(--bad)}
+#end{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
