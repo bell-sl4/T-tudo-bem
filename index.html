@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tá tudo bem</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main id="app">
+  <section id="menu" class="screen">
+    <h1>Tá tudo bem</h1>
+    <p class="lead">Um cérebro corre pela escola. Um jornal fake news tenta enganá-lo. Descubra o que é verdade sobre saúde mental.</p>
+    <div class="row">
+      <button id="btnPlay">JOGAR</button>
+      <button id="btnHow" class="alt">COMO JOGAR</button>
+    </div>
+    <p class="credit">Pesquisa escolar Tá tudo bem · Colégio Estadual Marechal Floriano Peixoto</p>
+    <p class="credit" id="bestMenu"></p>
+  </section>
+
+  <section id="how" class="screen" hidden>
+    <h2>Como jogar</h2>
+    <ul class="rules">
+      <li>Uma afirmação sobre saúde mental aparece na tela.</li>
+      <li><b>VERDADEIRA:</b> fique parado, sem pular.</li>
+      <li><b>FALSA:</b> pule para desviar das palavras lançadas pelo jornal.</li>
+      <li>Acertou: +10 pontos. Errou: −5 pontos e perde 1 vida (você começa com 3).</li>
+      <li>Depois de cada resposta, uma explicação curta aparece.</li>
+    </ul>
+    <p>Computador: <b>espaço</b> ou <b>seta para cima</b>. Celular: <b>toque na tela</b> ou no botão PULAR.</p>
+    <div class="row">
+      <button id="btnStart">COMEÇAR</button>
+      <button id="btnBack" class="alt">VOLTAR</button>
+    </div>
+  </section>
+
+  <section id="game" class="screen" hidden>
+    <div id="hud" aria-live="polite">
+      <span id="hScore">Pontos: 0</span><span id="hLives">Vidas: 3</span><span id="hLevel">Nível 1</span><span id="hBest"></span>
+    </div>
+    <div id="stmt" role="status"></div>
+    <div id="stage">
+      <canvas id="cv" width="800" height="400" aria-label="Área do jogo"></canvas>
+      <div id="fb" hidden></div>
+      <div id="end" hidden>
+        <h2 id="endTitle"></h2>
+        <p id="endMsg"></p>
+        <p id="endStats"></p>
+        <div class="row">
+          <button id="btnAgain">JOGAR NOVAMENTE</button>
+          <button id="btnMenu" class="alt">VOLTAR AO MENU</button>
+        </div>
+      </div>
+    </div>
+    <div class="row small">
+      <button id="btnJump">PULAR</button>
+      <button id="btnPause" class="alt">PAUSAR</button>
+      <button id="btnRestart" class="alt">REINICIAR</button>
+      <button id="btnMute" class="alt">SOM: LIGADO</button>
+    </div>
+  </section>
+</main>
+<script src="js/questions.js"></script>
+<script src="js/assets.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
